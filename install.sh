@@ -11,4 +11,4 @@ wget --quiet https://releases.hashicorp.com/terraform/1.7.5/terraform_1.7.5_linu
 # Install AWS CLIv2
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
   && unzip awscliv2.zip \
-  && ./aws/install
+  && sudo ./aws/install
