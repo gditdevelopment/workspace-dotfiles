@@ -60,7 +60,7 @@ printf "if [ -f ~/.git-completion.bash ]; then\n   source ~/.git-completion.bash
 
 # Set up Aliases
 touch ~/.bash_aliases
-printf "alias python=python3" >> ~/.bash_aliases
-printf "alias pip=pip3" >> ~/.bash_aliases
+printf "alias python=python3\n" >> ~/.bash_aliases
+printf "alias pip=pip3\n" >> ~/.bash_aliases
 # =================================
 
