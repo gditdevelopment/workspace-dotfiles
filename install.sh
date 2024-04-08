@@ -53,3 +53,8 @@ curl -sSL https://install.python-poetry.org | python3 -
 export PATH="/home/coder/.local/bin:$PATH"
 # ==================================
 
+# Install Git Completions
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o .git-completion.bash
+source ~/.git-completion.bash
+# ==================================
+
