@@ -7,11 +7,13 @@ wget --quiet https://releases.hashicorp.com/terraform/1.7.5/terraform_1.7.5_linu
   && unzip terraform_1.7.5_linux_amd64.zip \
   && sudo mv terraform /usr/bin \
   && rm terraform_1.7.5_linux_amd64.zip
+# =====================================
 
 # Install AWS CLIv2
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
   && unzip awscliv2.zip \
   && sudo ./aws/install
+# ====================================
 
 # Install Node 16.20.2
 export NVM_DIR="$HOME/.nvm"
@@ -37,5 +39,10 @@ fi
 
 nvm use --delete-prefix $NODE_VERSION
 export NODE_PATH=$(nvm which current)
-
 ENV PATH $NODE_PATH:$PATH
+# ==================================
+
+# Install Poetry
+curl -sSL https://install.python-poetry.org | python3 -
+# ==================================
+
