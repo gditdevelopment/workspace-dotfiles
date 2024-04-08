@@ -50,5 +50,6 @@ export PATH=$NODE_PATH:$PATH
 
 # Install Poetry
 curl -sSL https://install.python-poetry.org | python3 -
+export PATH="/home/coder/.local/bin:$PATH"
 # ==================================
 
