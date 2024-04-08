@@ -14,11 +14,28 @@ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip
   && sudo ./aws/install
 
 # Install Node 16.20.2
-export NVM_DIR=/usr/local/nvm
-export NODE_VERSION=v16.20.2
-sudo mkdir -p /usr/local/nvm
-sudo curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-sudo /bin/bash -c "source $NVM_DIR/nvm.sh && nvm install $NODE_VERSION && nvm use --delete-prefix $NODE_VERSION"
-export NODE_PATH=$NVM_DIR/versions/node/$NODE_VERSION/bin
+export NVM_DIR="$HOME/.nvm"
+NODE_VERSION="v16.20.2"
+
+if [ ! -d "$NVM_DIR" ]; then
+    echo "Installing NVM..."
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+else
+    echo "NVM is already installed."
+fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+if [ $(nvm list | grep -c "$NODE_VERSION") -eq 0 ]; then
+    echo "Installing Node.js $NODE_VERSION..."
+    nvm install $NODE_VERSION
+else
+    echo "Node.js $NODE_VERSION is already installed."
+fi
+
+nvm use --delete-prefix $NODE_VERSION
+export NODE_PATH=$(nvm which current)
 
 ENV PATH $NODE_PATH:$PATH
