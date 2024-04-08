@@ -3,7 +3,7 @@
 cd $HOME
 
 # Set the locale
-sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen && locale-gen
+sudo sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen && locale-gen
 export LANG=en_US.UTF-8  
 export LANGUAGE=en_US:en  
 export LC_ALL=en_US.UTF-8 
