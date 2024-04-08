@@ -58,3 +58,9 @@ curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-com
 printf "if [ -f ~/.git-completion.bash ]; then\n   source ~/.git-completion.bash\nfi\n" >> ~/.bashrc
 # ==================================
 
+# Set up Aliases
+touch ~/.bash_aliases
+printf "alias python=python3" >> ~/.bash_aliases
+printf "alias pip=pip3" >> ~/.bash_aliases
+# =================================
+
