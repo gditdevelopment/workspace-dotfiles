@@ -8,6 +8,9 @@ export LANG=en_US.UTF-8
 export LANGUAGE=en_US:en  
 export LC_ALL=en_US.UTF-8 
 
+# Set our AWS_REGION
+export DEFAULT_AWS_REGION="us-east-1"
+
 # Install Terraform 1.7.5
 wget --quiet https://releases.hashicorp.com/terraform/1.7.5/terraform_1.7.5_linux_amd64.zip \
   && unzip terraform_1.7.5_linux_amd64.zip \
