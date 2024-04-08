@@ -45,7 +45,7 @@ fi
 
 nvm use --delete-prefix $NODE_VERSION
 export NODE_PATH=$(nvm which current)
-ENV PATH $NODE_PATH:$PATH
+export PATH=$NODE_PATH:$PATH
 # ==================================
 
 # Install Poetry
