@@ -65,5 +65,9 @@ printf "if [ -f ~/.git-completion.bash ]; then\n   source ~/.git-completion.bash
 touch ~/.bash_aliases
 printf "alias python=python3\n" >> ~/.bash_aliases
 printf "alias pip=pip3\n" >> ~/.bash_aliases
-# =================================
+# ==================================
 
+# Activate Python Venv
+printf "python3 -m venv ~/.venv\n" >> ~/.bashrc
+printf "source ~/.venv/bin/activate\n" >> ~/.bashrc
+# ==================================
