@@ -67,7 +67,12 @@ printf "alias python=python3\n" >> ~/.bash_aliases
 printf "alias pip=pip3\n" >> ~/.bash_aliases
 # ==================================
 
-# Activate Python Venv
+# Update Package List
+sudo apt-get update
+# ==================================
+
+# Install and Activate Python Venv
+sudo apt install python3.10-venv
 printf "python3 -m venv ~/.venv\n" >> ~/.bashrc
 printf "source ~/.venv/bin/activate\n" >> ~/.bashrc
 # ==================================
